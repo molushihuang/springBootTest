@@ -1,0 +1,51 @@
+#项目端口号 
+server:
+  port: 9200
+  servlet-path: /xqd
+  #session过期时间，单位为秒
+  session:
+    timeout: 3600  
+spring:
+  #数据库配置
+  datasource:
+    url: jdbc:mysql://192.168.3.144:3306/xqd_test?useUnicode=true&useSSL=false
+    username: root
+    password: Cdym328!
+    driver-class-name: com.mysql.jdbc.Driver
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+    multipart:
+      maxFileSize: 100Mb
+      maxRequestSize: 1000Mb
+
+mybatis:
+  type-aliases-package: com.xqd.entity
+  mapper-locations: classpath*:mapper/*.xml
+  
+logging:
+  level:
+    org:
+      springframework: INFO
+    com:
+      box:
+        dao: DEBUG
+  #file: log/spring-boot-logging.log
+
+#mapper
+#mappers 多个接口时逗号隔开
+#mapper:
+#  mappers:
+#    - com.box.util.mapper.MyMapper
+#  not-empty: false
+#  identity: MYSQL
+#  ORDER: BEFORE
+
+#pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql

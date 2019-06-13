@@ -1,0 +1,7 @@
+#宥马运动后台管理系统
+spring:
+  profiles:
+    active: dev
+    
+#dev
+#prod
