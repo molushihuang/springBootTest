@@ -1,4 +1,4 @@
-package com.xqd;
+package com.xqd.javatest;
 
 import java.util.*;
 
