@@ -1,14 +1,14 @@
 package com.xqd.javatest.factorymethodpattern;
 
-public  class IDCard extends Product {
+public class IDCard extends Product {
 
     private String owner;
     private int serial;
 
-    public IDCard(String owner,int serial){
-        this.owner=owner;
-        this.serial=serial;
-        System.out.println("制作"+owner+"("+serial+")的id卡");
+    public IDCard(String owner, int serial) {
+        this.owner = owner;
+        this.serial = serial;
+        System.out.println("制作" + owner + "(" + serial + ")的id卡");
 
     }
 
@@ -23,7 +23,7 @@ public  class IDCard extends Product {
     @Override
     public void use() {
 
-        System.out.println("使用"+owner+"("+serial+")的id卡");
+        System.out.println("使用" + owner + "(" + serial + ")的id卡");
 
     }
 }
