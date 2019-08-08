@@ -7,7 +7,7 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class SocketTest {
+public class SocketServerTest {
 
     public static void main(String[] args) {
         try {
