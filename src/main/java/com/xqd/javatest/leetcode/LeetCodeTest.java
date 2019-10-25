@@ -1,5 +1,7 @@
 package com.xqd.javatest.leetcode;
 
+import java.util.Arrays;
+
 /**
  * Created by 谢邱东 on 2019/10/23 15:07.
  * NO bug
@@ -95,7 +97,6 @@ class LeetCodeTest {
 
     //实现indexOf方法
     public int strStr(String haystack, String needle) {
-
         if (needle == null || needle.length() == 0) {
             return 0;
         }
@@ -112,6 +113,69 @@ class LeetCodeTest {
         return index;
 
     }
+
+    //搜索插入位置
+    public int searchInsert(int[] nums, int target) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+
+        }
+
+        return left;
+
+    }
+
+    //最大字序和
+    public int maxSubArray(int[] nums) {
+
+        if (nums.length == 0) {
+            return 0;
+        }
+        int res = nums[0];
+        int sum = 0;
+        for (int num : nums) {
+            if (sum > 0) {
+                sum = sum + num;
+            } else {
+                sum = num;
+            }
+            res = Math.max(sum, res);
+        }
+        return res;
+
+    }
+
+    //最后一个单词的长度
+    public int lengthOfLastWord(String s) {
+
+        int end = s.length() - 1;
+        while (end >= 0 && s.charAt(end) == ' ') end--;
+        if (end < 0) return 0;
+        int start = end;
+        while (start >= 0 && s.charAt(start) != ' ') start--;
+        return end - start;
+    }
+
+    //合并两个有序数组
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        System.arraycopy(nums2, 0, nums1, m, n);
+        Arrays.sort(nums1);
+    }
+
+
 }
 
 
