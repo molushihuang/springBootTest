@@ -214,6 +214,35 @@ class LeetCodeTest {
         }
         return maxProfit;
     }
+
+    //买卖股票的最佳时机 II
+    public int maxProfit2(int[] prices) {
+
+        int maxProfit = 0;
+
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > prices[i - 1]) {
+                maxProfit = maxProfit + prices[i] - prices[i - 1];
+            }
+
+        }
+        return maxProfit;
+    }
+
+    //验证回文串
+    public boolean isPalindrome(String s) {
+        int i = 0, j = s.length() - 1;
+        while (i < j) {
+            while (i < j && !Character.isLetterOrDigit(s.charAt(i))) i++;
+            while (i < j && !Character.isLetterOrDigit(s.charAt(j))) j--;
+            if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))) return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
+
+
 }
 
 
