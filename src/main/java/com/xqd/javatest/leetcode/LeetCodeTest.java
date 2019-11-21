@@ -260,6 +260,11 @@ class LeetCodeTest {
         return true;
     }
 
+    //求众数
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length/2];
+    }
 
 }
 
