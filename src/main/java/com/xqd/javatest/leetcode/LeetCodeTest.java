@@ -20,8 +20,9 @@ class LeetCodeTest {
 //        System.out.println(t[0]);
 //        System.out.println(t[1]);
 
-        int num = test.strStr("aaaaa", "bba");
-        System.out.println(num);
+//        int num = test.strStr("aaaaa", "bba");
+//        System.out.println(num);
+        test.bubbleSort(new int[]{1, 5, 4, 3, 8});
     }
 
     //两书相加
@@ -263,27 +264,45 @@ class LeetCodeTest {
     //求众数
     public int majorityElement(int[] nums) {
         Arrays.sort(nums);
-        return nums[nums.length/2];
+        return nums[nums.length / 2];
     }
 
     //旋转数组
     public void rotate(int[] nums, int k) {
-        k=k%nums.length;
-        reverse(nums,0,nums.length-1);
-        reverse(nums,0,k-1);
-        reverse(nums,k,nums.length-1);
+        k = k % nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
     }
 
-    public void reverse(int[] nums,int start,int end){
+    public void reverse(int[] nums, int start, int end) {
 
-        while(start<end){
-            int temp=nums[end];
-            nums[end]=nums[start];
-            nums[start]=temp;
+        while (start < end) {
+            int temp = nums[end];
+            nums[end] = nums[start];
+            nums[start] = temp;
             start++;
             end--;
 
         }
+    }
+
+    //冒泡排序
+    public void bubbleSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+
     }
 
 }
