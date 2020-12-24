@@ -117,14 +117,6 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <!--配置热部署 -->
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.springframework</groupId>
-                            <artifactId>springloaded</artifactId>
-                            <version>1.2.3.RELEASE</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
