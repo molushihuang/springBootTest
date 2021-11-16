@@ -302,8 +302,21 @@ class LeetCodeTest {
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
+    }
+
+    //Excel表列序号
+    public int titleToNumber(String columnTitle) {
+        int num = 0;
+        for (int i = 0; i < columnTitle.length(); i++) {
+            num = num * 26 + columnTitle.charAt(i) + 'A' + 1;
+        }
+        return num;
 
     }
+
+
+
+
 
 }
 
